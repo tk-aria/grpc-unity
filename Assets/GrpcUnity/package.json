@@ -1,0 +1,22 @@
+{
+	"name": "com.ariasdk.grpc-unity",
+	"version": "0.0.1",
+	"unity": "2018.3",
+	"displayName": "Grpc Unity",
+	"description": "grpc for unity",
+	"category": "Unity",
+	"keywords": [ "Unity", "grpc"],
+	"dependencies": {
+	},
+	"samples": [
+		{
+			"displayName": "Example",
+			"description": "how to use.",
+			"path": "Samples~/Example"
+		}
+	],
+	"author": {
+		"name": "tkaria",
+		"url": "https://tk3118.hatenablog.com"
+	}
+}
