@@ -1,0 +1,27 @@
+{
+    "folders": [
+        {
+            "name": "grpc-unity",
+            "path": "./"
+        },
+        {
+            "name": "manifest",
+            "path": "./Packages"
+        },
+        {
+            "name": "protobuf",
+            "path": "./.third-party/protobuf"
+        }
+    ],
+    "settings": {
+    },
+    "extensions": {
+        "recommendations": [
+            "ms-dotnettools.csharp",
+            "unity.unity-debug",
+            "editorconfig.editorconfig",
+            "formulahendry.dotnet-test-explorer",
+            "zxh404.vscode-proto3"
+        ]
+    }
+}
