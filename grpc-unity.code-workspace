@@ -9,6 +9,10 @@
             "path": "./Packages"
         },*/
         {
+            "name": "grpc",
+            "path": "./.third-party/grpc"
+        },
+        {
             "name": "protobuf",
             "path": "./.third-party/protobuf"
         }
