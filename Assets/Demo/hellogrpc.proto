@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package google.protobuf;
+
+option csharp_namespace = "GrpcUnity.Demo";
+
+service HelloGrpc {
+    rpc TestResponce (StreamData) returns (StreamData) {}
+    rpc TestClientSideStreaming (StreamData) returns (stream StreamData) {}
+    rpc TestServerSideStreaming (stream StreamData) returns (StreamData) {}
+    rpc TestBidirectionalStreaming (stream StreamData) returns (stream StreamData) {}
+}
+
+message StreamData {
+    string id = 1;
+    int32 type = 2;
+    bytes body = 3;
+}
