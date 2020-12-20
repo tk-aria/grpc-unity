@@ -53,3 +53,7 @@ update_protobuf:
 	cd .third-party/protobuf/csharp/src/Google.Protobuf && \
 		dotnet publish -c Release -f net45
 	cp -f ./.third-party/protobuf/csharp/src/Google.Protobuf/bin/Release/net45/publish/Google.Protobuf.dll ./Assets/GrpcUnity/Plugins/Google.Protobuf/lib/net45/
+
+.PHONY: protoc_build ## [category]`description`.
+protoc_build:
+	./Assets/GrpcUnity/Editor/tools/macosx_x64/protoc -I ./Assets/Demo --csharp_out=./Assets/Demo/Generated/Data --grpc_out=./Assets/Demo/Generated/Service/ --plugin=protoc-gen-grpc=./Assets/GrpcUnity/Editor/tools/macosx_x64/grpc_csharp_plugin ./Assets/Demo/hellogrpc.proto

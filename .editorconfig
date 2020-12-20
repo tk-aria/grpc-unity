@@ -18,7 +18,7 @@ tab_width = 4
 trim_trailing_whitespace = true
 insert_final_newline = false
 
-[*.{json,shader,uxml,uss}]
+[*.{json,shader,uxml,uss,proto}]
 root = true
 charset = utf-8-bom
 end_of_line = lf
