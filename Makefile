@@ -25,9 +25,10 @@ delete_all_csproj:
 
 .PHONY: dotnet_test ## [category]`description`.
 dotnet_test:
-	msbuild Assembly-CSharp.csproj
-	#dotnet test Assembly-CSharp.csproj
-	#nunit-console
+	msbuild GrpcUnity.Test.csproj
+	# dotnet test GrpcUnity.Test.csproj
+	# nuget install NUnit.ConsoleRunner -Version 3.11.1
+	# mono nunit3-console.exe Library/ScriptAssemblies/GrpcUnity.Test.dll
 
 .PHONY: update_mono_darwin ## [category]`description`.
 update_mono_darwin:
