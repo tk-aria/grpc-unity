@@ -25,7 +25,9 @@ delete_all_csproj:
 
 .PHONY: dotnet_test ## [category]`description`.
 dotnet_test:
-	@echo 'hello world'
+	msbuild Assembly-CSharp.csproj
+	#dotnet test Assembly-CSharp.csproj
+	#nunit-console
 
 .PHONY: update_mono_darwin ## [category]`description`.
 update_mono_darwin:
