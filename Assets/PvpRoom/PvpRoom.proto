@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option go_package = ".;PvpRoom";
+option csharp_namespace = "Scribble.Runtime.Model.Generated";
+
+package PvpRoom;
+
+// The greeting service definition.
+service PvpRoom {
+	rpc CreateRoom (UserId) returns (RoomInfo) {}
+	rpc GetRoomList (Null) returns (RoomInfo) {}
+    // ルーム情報取得
+	// TODO: 検索条件等決める
+	//rpc SearchRoom (Null) returns (RoomInfoResponse) {}
+    rpc GetRoomInfo (RoomId) returns (RoomInfo) {}
+    rpc SetRoomInfo (RoomInfo) returns (RoomUpdateStatus) {}
+    // Bidirectional streaming RPCを用いてメッセージを交換する
+	rpc JoinRoom (stream StreamData) returns (stream StreamData) {}
+}
+
+message RoomUpdateStatus {
+	bool update_state = 1;
+}
+
+message RoomId {
+    string room_id = 1;
+}
+
+message RoomInfo {
+    string id = 1;
+	int64 user_count = 2;
+}
+
+message RoomInfoList {
+	repeated RoomInfo rooom_info = 1;
+}
+
+message UserId {
+    string id = 1;
+}
+
+message Null {
+}
+
+enum RequestType {
+	SYSYTEM_UNKNOWN = 0;
+	SERVER_CALL = 1;
+	INIT = 2;
+	JOIN = 3;
+	EXIT = 4;
+	MESSAGE = 5;
+}
+
+message StreamData {
+    string id = 1;
+    RequestType type = 2;
+    bytes body = 3;
+}
+
