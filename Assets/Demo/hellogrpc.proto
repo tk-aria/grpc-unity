@@ -6,8 +6,8 @@ option csharp_namespace = "GrpcUnity.Demo";
 
 service HelloGrpc {
     rpc TestResponce (StreamData) returns (StreamData) {}
-    rpc TestClientSideStreaming (StreamData) returns (stream StreamData) {}
-    rpc TestServerSideStreaming (stream StreamData) returns (StreamData) {}
+    rpc TestServerSideStreaming (StreamData) returns (stream StreamData) {}
+    rpc TestClientSideStreaming (stream StreamData) returns (StreamData) {}
     rpc TestBidirectionalStreaming (stream StreamData) returns (stream StreamData) {}
 }
 
