@@ -57,3 +57,7 @@ update_protobuf:
 .PHONY: protoc_build ## [category]`description`.
 protoc_build:
 	./Assets/GrpcUnity/Editor/tools/macosx_x64/protoc -I ./Assets/Demo --csharp_out=./Assets/Demo/Generated/Data --grpc_out=./Assets/Demo/Generated/Service/ --plugin=protoc-gen-grpc=./Assets/GrpcUnity/Editor/tools/macosx_x64/grpc_csharp_plugin ./Assets/Demo/hellogrpc.proto
+
+.PHONY: protoc_build2 ## [category]`description`.
+protoc_build2:
+	./Assets/GrpcUnity/Editor/tools/macosx_x64/protoc -I ./Assets/PvpRoom/ --csharp_out=./Assets/PvpRoom/Runtime/Generated/Data --grpc_out=./Assets/PvpRoom/Runtime/Generated/Service/ --plugin=protoc-gen-grpc=./Assets/GrpcUnity/Editor/tools/macosx_x64/grpc_csharp_plugin ./Assets/PvpRoom/*.proto
